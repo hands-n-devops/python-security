@@ -33,4 +33,4 @@ jobs:
       uses: github/codeql-action/autobuild@v3
 
     - name: Perform CodeQL Analysis
-      uses: <a href="mailto:github/codeql-action/analyze@v3" rel="noreferrer noopener" title="mailto:github/codeql-action/analyze@v3" target="_blank">github/codeql-action/analyze@v3</a>
+      uses: github/codeql-action/analyze@v3 
