@@ -3,9 +3,9 @@ name: "CodeQL"
 
 on:
   push:
-    branches: [ main, dev ]
+    branches: [ dev ]
   pull_request:
-    branches: [ main, dev ]
+    branches: [ dev ]
 
 jobs:
   analyze:
@@ -30,8 +30,10 @@ jobs:
       with:
         languages: ${{ matrix.language }}
 
-    - name: Autobuild
-      uses: github/codeql-action/autobuild@v3
-
     - name: Perform CodeQL Analysis
       uses: github/codeql-action/analyze@v3 
+
+    - name: Upload SARIF
+      uses: github/codeql-action/upload-sarif@v3
+      with:
+        sarif_file: results.sarif
